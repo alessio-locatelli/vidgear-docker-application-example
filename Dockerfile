@@ -3,7 +3,6 @@
 FROM fedora:40 AS builder
 WORKDIR /
 
-
 # Python
 ENV PYTHONUNBUFFERED=1 \
     PYTHONFAULTHANDLER=1 \
