@@ -1,0 +1,18 @@
+services:
+  backend:
+    build:
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+        DOCKER_BUILDKIT: 1
+    volumes:
+      - type: volume
+        source: records
+        target: /opt/records
+    environment:
+      - RTSP_URL=${RTSP_URL}
+      - SAVE_LOCATION=${SAVE_LOCATION}
+    entrypoint: "python3 -m app.stream_writer"
+    stop_grace_period: 65s # NOTE: You can change this based on your `CamGear` config.
+
+volumes:
+  records:

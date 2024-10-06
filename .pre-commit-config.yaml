@@ -1,0 +1,52 @@
+default_language_version:
+  python: python3.12
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-json
+      - id: check-toml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: no-commit-to-branch
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.3.0
+    hooks:
+      - id: codespell
+
+  - repo: https://github.com/python-poetry/poetry
+    rev: "1.8.3"
+    hooks:
+      - id: poetry-check
+        files: pyproject.toml
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: "v1.11.2"
+    hooks:
+      - id: mypy
+        additional_dependencies: [vidgear, opencv-python, numpy]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.7
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix, --preview]
+      - id: ruff-format
+        args: ["--preview"]
+
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - id: hadolint
+
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.25.0
+    hooks:
+      - id: typos

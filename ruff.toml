@@ -1,0 +1,162 @@
+target-version = "py312"
+
+extend-exclude = [
+    ".cache",
+    ".pytest_cache",
+    ".vscode",
+    "data",
+    "docs",
+    "resources",
+    "pdoc",
+    "out"
+]
+lint.ignore = [
+    # whitespace-before-punctuation (disabled because it is not stable)
+    "E203",
+    # Do not perform function call {name} in argument defaults
+    "B008",
+    # Missing docstring in [...]
+    "D1",
+    # One-line docstring should fit on one line
+    "D200",
+    # 1 blank line required before class docstring
+    "D203",
+    # 1 blank line required between summary line and description
+    "D205",
+    # Multi-line docstring summary should start at the first line
+    "D212",
+    # Multi-line docstring summary should start at the second line
+    "D213",
+    # First line should end with a period
+    "D400",
+    # Section name should end with a newline ("{name}")
+    "D406",
+    # Missing dashed underline after section ("{name}")
+    "D407",
+    # Missing blank line before section ("{name}")
+    "D411",
+    # Missing blank line after last section ("{name}")
+    "D413",
+    # First line should end with a period, question mark, or exclamation point
+    "D415",
+    # Use @pytest.fixture{expected} over @pytest.fixture{actual}
+    "PT001",
+    # Fixture {function} does not return anything, add leading underscore
+    "PT004",
+    # Missing explicit return at the end of function able to return non-None value
+    "RET503",
+    # Use of assert detected
+    "S101",
+    # Standard pseudo-random generators are not suitable for cryptographic purposes
+    "S311",
+    # Relative imports from parent modules are banned
+    "TID252",
+    # Avoid assignment expressions in assert statements
+    "RUF018",
+    # Missing author in TODO; try: # TODO(<author_name>): ... or # TODO @<author_name>: ...
+    "TD002",
+    # Magic value used in comparison, consider replacing...
+    "PLR2004",
+    # Explicitly concatenated string should be implicitly concatenated
+    "ISC003",
+    # Use `logging.exception` instead of `logging.error`
+    "TRY400",
+    # Avoid specifying long messages outside the exception class
+    "TRY003",
+    # missing-trailing-comma
+    "COM812",
+    # unused-method-argument
+    "ARG002",
+    # unspecified-encoding
+    "PLW1514",
+    # pandas-use-of-dot-at
+    "PD008",
+    # pandas-use-of-dot-iat
+    "PD009",
+    # We do not use SQL, so injection is not possible.
+    "S608",
+    # Conflicted rule.
+    "ISC001"
+]
+lint.select = [
+    # Pyflakes
+    "F",
+    # pycodestyle (E, W)
+    "E",
+    "W",
+    # mccabe
+    "C90",
+    # isort
+    "I",
+    # pep8-naming
+    "N",
+    # pyupgrade
+    "UP",
+    # flake8-async
+    "ASYNC",
+    # flake8-bandit
+    "S",
+    # flake8-boolean-trap
+    "FBT",
+    # flake8-bugbear
+    "B",
+    # flake8-builtins
+    "A",
+    # flake8-commas
+    "COM",
+    # flake8-comprehensions
+    "C4",
+    # flake8-datetimez
+    "DTZ",
+    # flake8-executable
+    "EXE",
+    # flake8-future-annotations
+    "FA",
+    # flake8-implicit-str-concat
+    "ISC",
+    # flake8-pie
+    "PIE",
+    # flake8-pytest-style
+    "PT",
+    # flake8-raise
+    "RSE",
+    # flake8-return
+    "RET",
+    # flake8-slots
+    "SLOT",
+    # flake8-simplify
+    "SIM",
+    # flake8-unused-arguments
+    "ARG",
+    # flake8-use-pathlib
+    "PTH",
+    # flake8-todos
+    "TD",
+    # pandas-vet
+    "PD",
+    # pygrep-hooks
+    "PGH",
+    # Pylint
+    "PL",
+    # tryceratops
+    "TRY",
+    # flynt
+    "FLY",
+    # NumPy-specific rules
+    "NPY",
+    # Perflint
+    "PERF",
+    # refurb
+    "FURB",
+    # flake8-logging
+    "LOG",
+    # Ruff-specific rules
+    "RUF",
+    # flake8-quotes
+    "Q",
+    # flake8-debugger
+    "T10",
+]
+
+[lint.isort]
+combine-as-imports = true
