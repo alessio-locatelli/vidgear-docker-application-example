@@ -1,7 +1,6 @@
 services:
   backend:
     build:
-      context: .
       args:
         BUILDKIT_INLINE_CACHE: 1
         DOCKER_BUILDKIT: 1
