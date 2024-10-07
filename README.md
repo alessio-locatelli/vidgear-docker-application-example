@@ -16,3 +16,9 @@ However, if you want to run the current code for learning purposes or to write a
    ```
 
 2. `docker compose up`
+
+## Related
+
+- https://github.com/AkashiSN/ffmpeg-docker
+- https://github.com/jrottenberg/ffmpeg
+- https://hub.docker.com/r/intel/intel-optimized-ffmpeg
